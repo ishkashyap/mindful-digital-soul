@@ -334,7 +334,7 @@ function restoreFormUI() {
 
 async function submitForm() {
     const cfg = window.MDS_CONFIG || {};
-    const API_URL = cfg.API_PREDICT || 'http://localhost:8000/api/predict';
+    const API_URL = cfg.API_PREDICT || 'https://mindful-digital-soul.onrender.com/api/predict';
 
     /* ── Pre-flight: verify backend is reachable before sending data ─── */
     const health = window.MDS_Health;
@@ -416,9 +416,11 @@ async function submitForm() {
 
         if (window.showToast) {
             if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-                window.showToast('Unable to connect to the server. It may be starting up — please try again in a moment.', 'error', 6000);
+                window.showToast('Unable to reach the AI server. It may be waking up — please try again in 10 seconds.', 'warning', 8000);
+            } else if (error.message.includes('503') || error.message.includes('model')) {
+                window.showToast('Model is warming up, please try again in 10 seconds.', 'warning', 8000);
             } else {
-                window.showToast(`Error: ${error.message}`, 'error', 5000);
+                window.showToast(`Something went wrong: ${error.message}. Please try again.`, 'error', 6000);
             }
         }
     }

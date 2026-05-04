@@ -293,13 +293,13 @@ function startPingLogic() {
             const attempt = health.retryCount;
             const max = health.maxRetries;
             bootStatus.textContent = `${msg.icon}  ${msg.text}`;
-            // Show subtle progress indicator after first few attempts
-            if (attempt >= 3) {
+            // Show subtle progress indicator after several attempts
+            if (attempt >= 5) {
                 bootStatus.textContent += `  [${attempt}/${max}]`;
             }
             msgIndex++;
         }
-    }, 2500);
+    }, 3000);
 
     /* ── Handle SUCCESS — backend is live ───────────────────────────── */
     document.addEventListener('mds:backend-ready', () => {

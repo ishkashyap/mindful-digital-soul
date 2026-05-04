@@ -20,6 +20,9 @@ from pydantic import BaseModel, Field, field_validator
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("mindful-api")
 
+# Immediate print for Render deploy visibility (logger may buffer)
+print("🚀 Mindful Digital Soul API — starting up...", flush=True)
+
 # ─── Model Holder ───────────────────────────────────────────────────────────────
 model = None
 
@@ -29,12 +32,23 @@ async def lifespan(app: FastAPI):
     """Load model on startup, cleanup on shutdown."""
     global model
     model_path = os.environ.get("MODEL_PATH", "./student_depression_best_model.pkl")
+    print(f"📂 Looking for model at: {model_path}", flush=True)
+    print(f"📁 Current directory: {os.getcwd()}", flush=True)
+    print(f"📋 Files in directory: {os.listdir('.')}", flush=True)
+
     if not os.path.exists(model_path):
+        print(f"❌ Model file not found at {model_path}", flush=True)
         logger.error(f"Model file not found at {model_path}")
         logger.warning("API will run but predictions will return 503 until model is available.")
     else:
-        model = joblib.load(model_path)
-        logger.info(f"✅ Model loaded from {model_path}")
+        try:
+            model = joblib.load(model_path)
+            print(f"✅ Model loaded successfully from {model_path}", flush=True)
+            logger.info(f"✅ Model loaded from {model_path}")
+        except Exception as e:
+            print(f"❌ Failed to load model: {e}", flush=True)
+            logger.error(f"Failed to load model: {e}")
+            logger.warning("API will run but predictions will return 503.")
     yield
     logger.info("Shutting down Mindful Digital Soul API")
 

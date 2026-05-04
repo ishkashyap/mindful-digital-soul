@@ -19,9 +19,9 @@
     'use strict';
 
     /* ── Configuration ──────────────────────────────────────────────────── */
-    const MAX_RETRIES       = 10;          // max ping attempts before declaring failure
-    const PING_INTERVAL_MS  = 2500;        // time between health checks
-    const REQUEST_TIMEOUT   = 8000;        // individual fetch timeout (cold starts can be slow)
+    const MAX_RETRIES       = 24;          // max ping attempts (24 × 3s = 72s window for cold starts)
+    const PING_INTERVAL_MS  = 3000;        // time between health checks
+    const REQUEST_TIMEOUT   = 10000;       // individual fetch timeout (cold starts can be slow)
 
     /* ── Internal State ─────────────────────────────────────────────────── */
     let _isReady        = false;

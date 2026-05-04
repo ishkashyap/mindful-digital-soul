@@ -61,7 +61,7 @@ app = FastAPI(
 # ─── CORS ───────────────────────────────────────────────────────────────────────
 ALLOWED_ORIGINS = os.environ.get(
     "ALLOWED_ORIGINS",
-    "http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000,http://localhost:8080"
+    "https://ishkashyap.github.io,http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000,http://localhost:8080"
 ).split(",")
 
 app.add_middleware(

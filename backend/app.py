@@ -59,17 +59,12 @@ app = FastAPI(
 )
 
 # ─── CORS ───────────────────────────────────────────────────────────────────────
-ALLOWED_ORIGINS = os.environ.get(
-    "ALLOWED_ORIGINS",
-    "https://ishkashyap.github.io,http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000,http://localhost:8080"
-).split(",")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
-    allow_headers=["Content-Type"],
+    allow_headers=["*"],
 )
 
 # ─── Request Logging Middleware ─────────────────────────────────────────────────

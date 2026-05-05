@@ -59,6 +59,7 @@ app = FastAPI(
 )
 
 # ─── CORS ───────────────────────────────────────────────────────────────────────
+# NEW (paste this):
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -66,7 +67,6 @@ app.add_middleware(
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
-
 # ─── Request Logging Middleware ─────────────────────────────────────────────────
 @app.middleware("http")
 async def log_requests(request: Request, call_next):

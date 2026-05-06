@@ -1,0 +1,16 @@
+# ─── robots.txt — Mindful Digital Soul ───────────────────────────────────────
+# https://ishkashyap.github.io/mindful-digital-soul/
+#
+# Privacy-first: No authentication, no cookies, no personal data collection.
+# This file allows search engines to crawl all public pages.
+
+User-agent: *
+Allow: /
+
+# Sitemap reference
+Sitemap: https://ishkashyap.github.io/mindful-digital-soul/sitemap.xml
+
+# Block backend API routes (served from Render, not GitHub Pages)
+# These are not relevant for search engine indexing.
+Disallow: /api/
+Disallow: /backend/

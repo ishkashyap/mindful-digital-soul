@@ -2,14 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mindful Digital Soul — AI-powered mental health assessment with immersive 3D visualization. Take a confidential assessment and receive personalized wellness insights.">
-    <title>Mindful Digital Soul — AI Mental Health Assessment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ─── Primary SEO Meta Tags ─────────────────────────────────────────── -->
+    <title>Mindful Digital Soul — AI-Powered Mental Health Assessment Platform</title>
+    <meta name="description" content="Mindful Digital Soul is an AI-powered mental health assessment platform with immersive 3D visualization. Take a confidential, privacy-first wellness assessment and receive personalized insights powered by machine learning.">
+    <meta name="keywords" content="AI mental health assessment, student wellness AI, mental health dashboard, AI-powered wellness analysis, machine learning mental health app, student depression prediction, online mental health tool, anonymous wellness assessment">
+    <meta name="author" content="Ish Kashyap">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ishkashyap.github.io/mindful-digital-soul/">
+
+    <!-- ─── Open Graph / Facebook ─────────────────────────────────────────── -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ishkashyap.github.io/mindful-digital-soul/">
+    <meta property="og:title" content="Mindful Digital Soul — AI-Powered Mental Health Assessment">
+    <meta property="og:description" content="Take a confidential AI-driven mental health assessment with 3D visualization. Privacy-first, anonymous, and powered by machine learning.">
+    <meta property="og:image" content="https://ishkashyap.github.io/mindful-digital-soul/favicon.png">
+    <meta property="og:site_name" content="Mindful Digital Soul">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ─── Twitter Card ──────────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ishkashyap.github.io/mindful-digital-soul/">
+    <meta name="twitter:title" content="Mindful Digital Soul — AI Mental Health Assessment">
+    <meta name="twitter:description" content="An immersive, AI-driven mental health assessment combining clinical insight with cutting-edge 3D visualization.">
+    <meta name="twitter:image" content="https://ishkashyap.github.io/mindful-digital-soul/favicon.png">
+
+    <!-- ─── Favicon & Theme ───────────────────────────────────────────────── -->
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="msapplication-TileColor" content="#0a0a0a">
+
+    <!-- ─── Structured Data (JSON-LD) ─────────────────────────────────────── -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mindful Digital Soul",
+        "url": "https://ishkashyap.github.io/mindful-digital-soul/",
+        "description": "AI-powered mental health assessment platform with immersive 3D visualization and machine learning insights.",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web Browser",
+        "author": {
+            "@type": "Person",
+            "name": "Ish Kashyap",
+            "url": "https://www.linkedin.com/in/ishkashyap"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- ─── Google Search Console Verification (replace content with your code) -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE"> -->
+
+    <!-- ─── Google Analytics (replace GA_MEASUREMENT_ID with your ID) ─────── -->
+    <!-- Privacy-first: No tracking IDs are active. Uncomment and configure when ready.
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID', { 'anonymize_ip': true });
+    </script>
+    -->
+
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 </head>
 <body>
+
+<!-- ─── Skip to Content (Accessibility) ──────────────────────────────── -->
+<a href="#hero" class="skip-link" id="skip-link">Skip to main content</a>
 
 
 <!-- ─── Navigation ──────────────────────────────────────────────────────── -->
@@ -31,6 +100,7 @@
     </ul>
 </nav>
 
+<main id="main-content">
 <!-- ─── Hero Section ────────────────────────────────────────────────────── -->
 <section class="hero" id="hero">
     <canvas id="hero-canvas" style="pointer-events: none;"></canvas>
@@ -194,9 +264,18 @@
     </div>
 </section>
 
+</main>
+
 <!-- ─── Footer ──────────────────────────────────────────────────────────── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="assessment.html">Assessment</a>
+        <a href="resources.html">Resources</a>
+        <a href="portfolio.html">Portfolio</a>
+    </nav>
     <p>&copy; 2026 <span>Mindful Digital Soul</span>. Built with care for mental wellness.</p>
+    <p class="footer-privacy">Privacy-first · No cookies · No tracking · Fully anonymous</p>
 </footer>
 
 <!-- ─── Scripts ─────────────────────────────────────────────────────────── -->
